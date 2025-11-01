@@ -4,9 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoltZ-Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./favicon/icons8-favicon-50 (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header id="header">
+        <h1 class="logo">
+            VoltZ
+            <span class="bolt">⚡</span>
+        </h1>
+        <nav>
+            <a href="#hero">Inicio</a>
+            <a href="#products">Produtos</a>
+            <a href="#reviews">Depoimentos</a>
+            <a href="#offers">Ofertas</a>
+            <a href="#newsletter">Newsletter</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo á VoltZ Store</h1>
+            <p>O melhor da tecnologia em sua mãos⚡</p>
+            <button class="cta-button">Compre agora</button>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <h2 class="section-tilte fade-up">Produtos em destaque</h2>
+        <div class="products-grid">
+            <div class="products-card fade-up">
+                <div class="product-image">🎧</div>
+                <div class="product-name">Headset Pro X</div>
+                <div class="product-price">R$ 599,00</div>
+                <button class="add-button">Adicionar</button>
+            </div>
+            <div class="product-card fade-up">
+                <div class="product-image">🖱️</div>
+                <div class="product-name">Mouse Gamer Elite</div>
+                <div class="product-price">R$ 499,90</div>
+                <button class="add-button">Adicionar</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <h2 class="section-tile fade-up"> O que Dizem nossos clientes</h2>
+        <div class="reviews-grid">
+            <div class="review-card fade-up">
+                <p>“O Headset Pro X mudou totalmente minha experiência de jogo!”</p>
+                <span>- Lucas, Gamer</span>
+            </div>
+            <div class="review-card fade-up">
+                <p>“Adorei o suporte premium, muito prático e resistente.”</p>
+                <span>- Ana, Gamer</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers-section" id="offers">
+        <h2 class="section-title fade-up">Ofertas da Semana</h2>
+        <div class="offers-grid">
+            <div class="offer-card fade-up">
+                <div class="product-image">🖱️</div>
+                <h3>Mouse Gamer Elite</h3>
+                <p>De R$ 599,90 por <strong>R$ 499,90</strong></p>
+                <button class="add-button">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section fade-up" id="newsletter">
+        <h2 class="section-title fade-up">Assine nossa Newsletter</h2>
+        <p>Receba promoções e novidades direto no seu email ⚡</p>
+        <form class="newsletter">
+            <input type="email" placeholder="Digite seu email" required>
+            <button type = "submit" class="cta-button">Enviar</button>
+        </form>
+    </section>
+
+    <section class="about-section fade-up" id="sobre">
+        <h2 class="section-title">Sobre a VoltZ Store</h2>
+        <p>criadores de conteúdo e entusiastas de gadgets. Buscamos qualidade, inovação e design moderno em cada produto.</p>
+        <div class="about-icons">
+            <div class="icon-box">🚀 <p>Entrega rápida</p></div>
+            <div class="icon-box">💡 <p>Produtos inovadores</p></div>
+            <div class="icon-box">🛡️ <p>Garantia e suporte</p></div>
+        </div>
+    </section>
+
+    <section class="faq-section fade-up" id="faq">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <div class="faq-item">
+            <h3>Quanto tempo leva para entrega?</h3>
+            <p>Normalmente entre 3 a 7 dias úteis.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Posso trocar de produto?</h3>
+            <p>Sim, dentro de 30 dias após a compra.</p>
+        </div>
+    </section>
 </body>
 </html>
