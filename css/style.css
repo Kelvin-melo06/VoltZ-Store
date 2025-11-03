@@ -493,6 +493,10 @@ nav a:hover::after{width: 100%;}
     transform: translateY(0);
 }
 
+.hamburguer-icon{
+    display: none;
+}
+
 @media(max-width:768px){
     .hero h1{font-size: 1.8rem;}
     .cta-button{padding: 0.8rem 2.5rem;}
