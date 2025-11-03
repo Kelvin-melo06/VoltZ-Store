@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./favicon/icons8-favicon-50 (1).png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/Hamburguer.js" defer></script>
+    <script src="js/fade-up.js" defer></script>
 </head>
 <body>
     <header id="header">
+        <div class="hamburguer-icon">☰</div>
         <h1 class="logo">
             VoltZ
             <span class="bolt">⚡</span>
@@ -34,9 +37,9 @@
     </section>
 
     <section class="products-section" id="products">
-        <h2 class="section-tilte fade-up">Produtos em destaque</h2>
+        <h2 class="section-title fade-up">Produtos em destaque</h2>
         <div class="products-grid">
-            <div class="products-card fade-up">
+            <div class="product-card fade-up">
                 <div class="product-image">🎧</div>
                 <div class="product-name">Headset Pro X</div>
                 <div class="product-price">R$ 599,00</div>
@@ -52,13 +55,13 @@
     </section>
 
     <section class="reviews-section" id="reviews">
-        <h2 class="section-tile fade-up"> O que Dizem nossos clientes</h2>
+        <h2 class="section-tile fade-up"> O que Dizem nossos clientes:</h2>
         <div class="reviews-grid">
-            <div class="review-card fade-up">
+            <div class="reviews-card fade-up">
                 <p>“O Headset Pro X mudou totalmente minha experiência de jogo!”</p>
                 <span>- Lucas, Gamer</span>
             </div>
-            <div class="review-card fade-up">
+            <div class="reviews-card fade-up">
                 <p>“Adorei o suporte premium, muito prático e resistente.”</p>
                 <span>- Ana, Gamer</span>
             </div>
@@ -80,24 +83,24 @@
     <section class="newsletter-section fade-up" id="newsletter">
         <h2 class="section-title fade-up">Assine nossa Newsletter</h2>
         <p>Receba promoções e novidades direto no seu email ⚡</p>
-        <form class="newsletter">
+        <form class="newsletter-form">
             <input type="email" placeholder="Digite seu email" required>
-            <button type = "submit" class="cta-button">Enviar</button>
+            <button type="submit" class="cta-button">Enviar</button>
         </form>
     </section>
 
     <section class="about-section fade-up" id="sobre">
-        <h2 class="section-title">Sobre a VoltZ Store</h2>
+        <h2 class="section-title fade-up">Sobre a VoltZ Store</h2>
         <p>criadores de conteúdo e entusiastas de gadgets. Buscamos qualidade, inovação e design moderno em cada produto.</p>
         <div class="about-icons">
-            <div class="icon-box">🚀 <p>Entrega rápida</p></div>
-            <div class="icon-box">💡 <p>Produtos inovadores</p></div>
-            <div class="icon-box">🛡️ <p>Garantia e suporte</p></div>
+            <div class="icon-box"><span class="iconAlone">🚀</span> <p>Entrega rápida</p></div>
+            <div class="icon-box"><span class="iconAlone">💡</span> <p>Produtos inovadores</p></div>
+            <div class="icon-box"><span class="iconAlone">🛡️</span> <p>Garantia e suporte</p></div>
         </div>
     </section>
 
     <section class="faq-section fade-up" id="faq">
-        <h2 class="section-title">Perguntas Frequentes</h2>
+        <h2 class="section-title fade-up">Perguntas Frequentes</h2>
         <div class="faq-item">
             <h3>Quanto tempo leva para entrega?</h3>
             <p>Normalmente entre 3 a 7 dias úteis.</p>
