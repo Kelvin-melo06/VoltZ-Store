@@ -70,8 +70,13 @@ function showCartModal(){
 
     // 3. Fechar modal 
     modal.querySelector(".close-cart").addEventListener("click", () => {
-        modal.remove();
-        updateCartCount(); // Atualiza o contador ao fechar
+
+        modal.classList.add('closing');
+
+        setTimeout(() =>{
+            modal.remove();
+            updateCartCount();
+        }, 300);
     });
 
     // 4. Remover item e atualizar
@@ -87,7 +92,11 @@ function showCartModal(){
     // 5. Fechar ao clicar no backdrop
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
-            modal.remove();
+            modal.classList.add('closing');
+
+            setTimeout(() =>{
+                modal.remove();
+            }, 300);
         }
     });
 }
