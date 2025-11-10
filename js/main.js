@@ -123,11 +123,32 @@ function setupAddButtons(){
     });
 }
 
+function setupFAQ(){
+    const faqItem = document.querySelectorAll('.faq-item');
+
+    faqItem.forEach((item) => {
+        const question = item.querySelector('h3');
+        const answer = item.querySelector('p');
+
+        if(question && answer){
+            question.addEventListener('click', () =>{
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    // Abre: Define a altura máxima para a altura real do conteúdo
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    // Fecha: Define a altura máxima como zero
+                    answer.style.maxHeight = null; 
+                }
+            })
+        }
+    })
+}
 
 function main(){
     setupAddButtons();
-    // setupHamburgerMenu(); // (Removido daqui pois já está no DOMContentLoaded)
-    // setupFAQ();
+    setupFAQ();
 }
 
 
