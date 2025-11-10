@@ -60,7 +60,7 @@ function showCartModal(){
                     `).join("")}
                 </ul>
                 <p><strong>Total:</strong> R$${total}</p>`
-                : "<p>O carrinho está vazio 😔</p>"
+                : "<p class = \"cart-empty\">O carrinho está vazio 😔</p>"
             }
             <button class="close-cart">Fechar</button>
         </div>

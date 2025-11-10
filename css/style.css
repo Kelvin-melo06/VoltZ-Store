@@ -762,7 +762,21 @@ nav a:hover::after{width: 100%;}
     box-shadow: 0 5px 35px rgba(0, 191, 255, 0.7);
 }
 
+.cart-empty{
+    text-align: center;
+    padding: 2rem 0;
+    color: #5CE1E6;
+    font-size: 1.1rem;
+}
 
+.cart-empty::before{
+    content: '🛒';
+    display: block;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px #00BFFF);
+    animation: pulse 2s ease-in-out infinite;
+}
 
 .cart-icon{
   font-size: 1.5rem;
