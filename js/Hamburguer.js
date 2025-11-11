@@ -9,7 +9,7 @@ function toggleMenu(){
 
    hamburguer.classList.toggle('hamburguer-anim');
 
-   requestAnimationFrame(() =>{
+   requestAnimationFrame(() => {
       setTimeout(() =>{
          if(willOpen){
             hamburguer.classList.replace('fa-bars', 'fa-xmark');
@@ -17,7 +17,7 @@ function toggleMenu(){
             hamburguer.classList.replace('fa-xmark', 'fa-bars');
          }
       }, 180);
-   });
+   })
 }
 
 hamburguer.addEventListener('click', toggleMenu)
