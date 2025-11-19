@@ -7,23 +7,20 @@ console.log("main.js carregado");
 // **********************************************
 
 function updateCartCount() {
-    // Estas funções (loadCart, getCartTotal) estão em cart.js
     const cart = loadCart();
-    const cartCountSpan = document.getElementById('cart-count'); 
-    
-    if (!cartCountSpan) return;
+    const cartElementSpan = document.getElementById('cart-count');
 
-    // Calcula o total de produtos (somando a quantidade de todos os itens)
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const totalItems = cart.reduce((total, item) => {
+        total += item.quantity || 0;
+        return total;
+    }, 0);
 
-    cartCountSpan.textContent = totalItems;
+    cartElementSpan.textContent = totalItems;
 
-    // Mostra/esconde o contador no header
-    if (totalItems > 0) {
-        cartCountSpan.style.display = 'inline-block'; 
-    } else {
-        // Esconder o contador quando o carrinho estiver vazio
-        cartCountSpan.style.display = 'none'; 
+    if(totalItems > 0){
+        cartElementSpan.style.display = 'inline-block';
+    }else{
+        cartElementSpan.style.display = 'none';
     }
 }
 
@@ -46,23 +43,35 @@ function showCartModal(){
 
     const total = getCartTotal();
 
+    const cartItemsHTML = cart.length > 0 
+        ? `
+            <ul>
+                ${cart.map(item => `
+                    <li>
+                        ${item.name} - R$${item.price.toFixed(2)} x ${item.quantity}
+                        <button class="remove-item" data-id="${item.id}">Remover</button>
+                    </li>
+                `).join("")}
+            </ul>
+            <p>
+                <strong>Total:</strong> R$${total}
+            </p>`
+        : `
+            <p class="cart-empty">
+                O carrinho está vazio 😔
+            </p>`;
+
     modal.innerHTML = `
         <div class="cart-content">
+
             <h2>Carrinho 🛒</h2>
-            ${
-                cart.length > 0 
-                ? `<ul>
-                    ${cart.map(item => `
-                        <li>
-                            ${item.name} - R$${item.price.toFixed(2)} x ${item.quantity}
-                            <button class="remove-item" data-id="${item.id}">Remover</button>
-                        </li>
-                    `).join("")}
-                </ul>
-                <p><strong>Total:</strong> R$${total}</p>`
-                : "<p class = \"cart-empty\">O carrinho está vazio 😔</p>"
-            }
-            <button class="close-cart">Fechar</button>
+
+            ${cartItemsHTML}
+
+            <button class="close-cart">
+                Fechar
+            </button>
+            
         </div>
     `;
 

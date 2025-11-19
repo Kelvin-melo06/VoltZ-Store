@@ -2,7 +2,8 @@ console.log("cart.js carregado");
 
 // --- Lista de produtos do carrinho no localStorage ---
 function loadCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(cart) : [];
 }
 
 function saveCart(cart) {
@@ -40,9 +41,10 @@ function removeFromCart(productId) {
 // --- Calcula total do carrinho ---
 function getCartTotal() {
   const cart = loadCart();
+
   let total = 0;
 
-  for (const item of cart) {
+  for(let item of cart){
     total += (item.price || 0) * (item.quantity || 0);
   }
 
