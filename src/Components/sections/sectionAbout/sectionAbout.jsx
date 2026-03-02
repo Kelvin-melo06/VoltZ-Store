@@ -4,7 +4,7 @@ import { FaRocket, FaLightbulb, FaShieldAlt } from "react-icons/fa";
 
 const SectionAbout = () => {
   return (
-    <div>
+    <section className="about-section fade-up" id="about">
       <h2
         className="
       section-title
@@ -49,7 +49,7 @@ const SectionAbout = () => {
           <p>Garantia e suporte</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

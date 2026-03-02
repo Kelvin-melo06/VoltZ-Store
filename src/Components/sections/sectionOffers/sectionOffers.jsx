@@ -4,7 +4,7 @@ import Button from "../../ui/button/button";
 
 const SectionOffers = () => {
   return (
-    <div className="offers-section fade-up" id="offers">
+    <section className="offers-section fade-up" id="offers">
       <h2 className="section-title fade-up">Ofertas Da Semana</h2>
       <div className="offers-grid">
         <Card className="offer-card fade-up" ActionButton={Button}>
@@ -15,7 +15,7 @@ const SectionOffers = () => {
           </p>
         </Card>
       </div>
-    </div>
+    </section>
   );
 };
 

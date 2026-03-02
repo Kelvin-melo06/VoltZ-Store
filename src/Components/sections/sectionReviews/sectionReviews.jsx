@@ -6,15 +6,15 @@ const SectionReviews = () => {
     <section className="reviews-section fade up" id="reviews">
       <h2 className="section-title fade-up">O que Dizem nossos clientes:</h2>
       <div className="reviews-grid">
-        <Card className="reviews-card fade-up" />
+        <Card className="reviews-card fade-up">
         <p>"Adorei o suporte premium, muito prático e resistente."</p>
         <span>- Ana, Gamer</span>
-        <Card />
-        <Card className="reviews-card fade-up" />
+        </Card>
+        <Card className="reviews-card fade-up">
         <p>"Adorei o suporte premium, muito prático e resistente."</p>
         <span>- Carlos, Gamer</span>
 
-        <Card />
+        </Card >
       </div>
     </section>
   );

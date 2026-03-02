@@ -3,7 +3,7 @@ import Button from "../../ui/button/button";
 
 const SectionNewsletter = () => {
   return (
-    <div className="newsletter-section fade-up" id="newsletter">
+    <section className="newsletter-section fade-up" id="newsletter">
       <h2 class="section-title fade-up">Assine nossa Newsletter</h2>
       <p>Receba promoções e novidades direto no seu email ⚡</p>
 
@@ -11,7 +11,7 @@ const SectionNewsletter = () => {
         <input type="email" placeholder="Digite seu email" required />
         <Button text="Enviar" type="submit" className="cta-button" />
       </form>
-    </div>
+    </section>
   );
 };
 

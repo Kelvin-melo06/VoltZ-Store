@@ -1,9 +1,10 @@
 import './button.css'
 
-const Button = ({text, className}) => {
+const Button = ({text, className, type}) => {
   return (
     <>
         <button 
+        type={type || "button"}
         className = {`
          ${ className || "" }`
          }>

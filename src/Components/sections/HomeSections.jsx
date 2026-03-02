@@ -9,15 +9,17 @@ import SectionFaq from './sectionFaq/sectionFaq'
 
 const HomeSections = () => {
   return (
-    <div>
-      <SectionHero />
-      <SectionProducts />
-      <SectionReviews />
-      <SectionOffers />
-      <SectionNewsletter />
-      <SectionAbout />
-      <SectionFaq />
-    </div>
+    <main>
+      
+        <SectionHero />
+        <SectionProducts />
+        <SectionReviews />
+        <SectionOffers />
+        <SectionNewsletter />
+        <SectionAbout />
+        <SectionFaq />
+      
+    </main>
   )
 }
 
