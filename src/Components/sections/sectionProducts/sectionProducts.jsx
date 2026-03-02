@@ -2,34 +2,28 @@ import "./sectionProducts.css";
 import Card from "../../ui/Card/card";
 import Button from "../../ui/button/button";
 
-const SectionProducts = () => {
+
+const SectionProducts = ({handleAddToCart}) => {
+  const products = [
+    { id: 1, name: "Headset Pro X", price: 599.0 },
+    { id: 2, name: "Mouse Gamer Elite", price: 499.9 },
+    { id: 3, name: "Mouse Gamer Elite (Oferta)", price: 499.9 },
+  ];
   return (
     <div>
       <section className="products-section fade-up" id="products">
         <h2 className="section-title fade-up">Produtos em destaque</h2>
 
         <div className="products-grid">
-          <Card
-            className="product-card fade-up"
-            ActionButton={() => (
-              <Button className="add-button" text="Comprar" />
+          {products.map((product) => (
+            <Card 
+            key = {product.id}
+            ActionButton = { () => ( 
+              <Button onClick = {() => handleAddToCart(product)} 
+              text= "Comprar"/>
             )}
-          >
-            <div className="product-image">🎧</div>
-            <h3 className="product-name">Headset Pro X</h3>
-            <p className="product-price">R$ 599,00</p>
-          </Card>
-
-          <Card
-            className="product-card fade-up"
-            ActionButton={() => (
-              <Button className="add-button" text="Comprar" />
-            )}
-          >
-            <div className="product-image">🖱️</div>
-            <h3 className="product-name">Mouse Gamer Elite</h3>
-            <p className="product-price">R$ 499,90</p>
-          </Card>
+            />
+          ))}
         </div>
       </section>
     </div>

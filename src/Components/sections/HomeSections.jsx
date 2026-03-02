@@ -7,12 +7,12 @@ import SectionNewsletter from './sectionNewsletter/sectionNewsletter'
 import SectionAbout from './sectionAbout/sectionAbout'
 import SectionFaq from './sectionFaq/sectionFaq'
 
-const HomeSections = () => {
+const HomeSections = ({handleAddToCart}) => {
   return (
     <main>
       
         <SectionHero />
-        <SectionProducts />
+        <SectionProducts handleAddToCart={handleAddToCart} />
         <SectionReviews />
         <SectionOffers />
         <SectionNewsletter />

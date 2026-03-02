@@ -3,7 +3,7 @@ import { FaShoppingCart, FaBars } from "react-icons/fa";
 import Nav from "../nav/nav.jsx";
 import "./header.css";
 
-const Header = () => {
+const Header = ({ cart }) => {
   return (
     <>
       <header id="header">
@@ -17,7 +17,7 @@ const Header = () => {
             <Icon icone={FaShoppingCart} size={24} color="#00BFFF" />
 
             <span id="cart-count" className="cart-count">
-              0
+              {cart.length}
             </span>
           </div>
 
