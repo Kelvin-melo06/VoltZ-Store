@@ -1,6 +1,6 @@
 
 
-const Card = ({children, className, ActionButton, ...props}) => {
+const Card = ({children, className, buttonText, onButtonClick, ...props}) => {
   return (
     <>
       <div 
@@ -11,7 +11,7 @@ const Card = ({children, className, ActionButton, ...props}) => {
 
         {children}
 
-        {ActionButton && <ActionButton />}
+        {buttonText && <button onClick={onButtonClick}> {buttonText}</button>}
       </div>
     </>
   )

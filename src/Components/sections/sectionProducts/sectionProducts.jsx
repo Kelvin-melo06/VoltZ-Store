@@ -18,11 +18,13 @@ const SectionProducts = ({handleAddToCart}) => {
           {products.map((product) => (
             <Card 
             key = {product.id}
-            ActionButton = { () => ( 
-              <Button onClick = {() => handleAddToCart(product)} 
-              text= "Comprar"/>
-            )}
-            />
+            buttonText = "Comprar"
+            onButtonClick = {() => handleAddToCart(product)}
+            > 
+            <div className="product-image">🎧</div>
+            <div className="product-name">{product.name}</div>
+            <div className="product-price">R$ {product.price.toFixed(2)}</div>
+            </Card>
           ))}
         </div>
       </section>
