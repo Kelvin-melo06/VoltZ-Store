@@ -28,7 +28,8 @@ function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Carrinho atualizado:", cart);
+    saveCartToLocalStorage(cart);
   }, [cart]);
 
   return (
