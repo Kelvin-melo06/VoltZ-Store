@@ -4,16 +4,12 @@ import Nav from "../nav/nav.jsx";
 import CartModal from "../../ui/modal/CartModal.jsx";
 import { useState } from "react";
 import "./header.css";
+import { CartContext } from "../../../context/CartContext.jsx";
+import { useContext } from "react";
 
-const Header = ({ cart, handleRemoveFromCart }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+const Header = () => {
+  const { cart, isModalOpen, openModal } = useContext(CartContext);
+  
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
   return (
@@ -46,11 +42,7 @@ const Header = ({ cart, handleRemoveFromCart }) => {
         <Nav />
 
         {isModalOpen && (
-          <CartModal
-            cart={cart}
-            handleRemoveFromCart={handleRemoveFromCart}
-            closeModal={closeModal}
-          />
+          <CartModal/>
         )}
       </header>
     </>

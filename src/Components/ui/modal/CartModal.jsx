@@ -1,11 +1,11 @@
 import "./CartModal.css";
 import Button from "../button/button";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
-const CartModal = ({
-  cart,
-  handleRemoveFromCart: handleRemoveFromCart,
-  closeModal: closeModal,
-}) => {
+const CartModal = () => {
+  const { cart, removeFromCart, closeModal } = useContext(CartContext);
+
   const cartTotal = cart
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
@@ -23,7 +23,7 @@ const CartModal = ({
               <Button
                 text="Remover"
                 className="remove-item"
-                onClick={() => handleRemoveFromCart(item.id)}
+                onClick={() => removeFromCart(item.id)}
               />
             </li>
           ))}
