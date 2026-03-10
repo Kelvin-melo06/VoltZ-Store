@@ -3,22 +3,20 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() =>{
+  const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingProduct = prevCart.find(
-        (item) => item.id === product.id
-      );
+      const existingProduct = prevCart.find((item) => item.id === product.id);
 
       if (existingProduct) {
         return prevCart.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
 
@@ -32,9 +30,9 @@ export const CartProvider = ({ children }) => {
         .map((item) =>
           item.id === productId
             ? { ...item, quantity: item.quantity - 1 }
-            : item
+            : item,
         )
-        .filter((item) => item.quantity > 0)
+        .filter((item) => item.quantity > 0),
     );
   };
 
@@ -47,20 +45,13 @@ export const CartProvider = ({ children }) => {
     saveCartToLocalStorage(cart);
   }, [cart]);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {setIsModalOpen(true);};
-  const closeModal = () => {setIsModalOpen(false);};
-
   return (
     <CartContext.Provider
-      value={{ 
+      value={{
         cart,
         addToCart,
         removeFromCart,
-        isModalOpen,
-        openModal,
-        closeModal }}
+      }}
     >
       {children}
     </CartContext.Provider>
