@@ -2,9 +2,12 @@ import "./sectionProducts.css";
 import Card from "../../ui/Card/card";
 import { getProducts} from '../../../services/products.js';
 import { useEffect, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
+import { useContext } from "react";
  
-const SectionProducts = ({handleAddToCart}) => {
+const SectionProducts = ({}) => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() =>{
     async function loadProducts(){
@@ -24,7 +27,7 @@ const SectionProducts = ({handleAddToCart}) => {
             <Card 
             key = {product.id}
             buttonText = "Comprar"
-            onButtonClick = {() => handleAddToCart(product)}
+            onButtonClick = {() => addToCart(product) }
             > 
             <div className="product-image">🎧</div>
             <div className="product-name">{product.name}</div>

@@ -2,9 +2,11 @@ import "./CartModal.css";
 import Button from "../button/button";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import { ModalContext } from "../../context/ModalContext";
 
 const CartModal = () => {
-  const { cart, removeFromCart, closeModal } = useContext(CartContext);
+  const { cart, removeFromCart } = useContext(CartContext);
+  const { closeModal } = useContext(ModalContext);
 
   const cartTotal = cart
     .reduce((total, item) => total + item.price * item.quantity, 0)
