@@ -1,3 +1,6 @@
+import Button from "../Button/Button";
+
+
 const Card = ({ children, className, buttonText, onButtonClick, ...props }) => {
   return (
     <>

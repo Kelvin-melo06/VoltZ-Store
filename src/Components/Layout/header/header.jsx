@@ -2,14 +2,14 @@ import { Icon } from "../../ui/icon/Icon.jsx";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import Nav from "../nav/nav.jsx";
 import CartModal from "../../ui/modal/CartModal.jsx";
-import { useState } from "react";
 import "./header.css";
 import { CartContext } from "../../../context/CartContext.jsx";
 import { useContext } from "react";
+import { ModalContext}  from "../../../context/ModalContext.jsx";
 
 const Header = () => {
-  const { cart, isModalOpen, openModal } = useContext(CartContext);
-  
+  const { cart } = useContext(CartContext);
+  const { isModalOpen, openModal } = useContext(ModalContext);
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
   return (

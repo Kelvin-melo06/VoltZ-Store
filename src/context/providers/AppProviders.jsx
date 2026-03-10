@@ -1,7 +1,7 @@
 import  CartProvider  from "../CartContext"
 import  ModalProvider  from "../ModalContext"
 
-const AppProviders = () => {
+const AppProviders = ({children}) => {
   return (
     
     <CartProvider>
