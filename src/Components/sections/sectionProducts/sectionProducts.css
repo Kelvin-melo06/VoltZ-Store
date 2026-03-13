@@ -1,0 +1,4 @@
+.product-card:hover{
+    border-color: #00BFFF;
+    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.4);
+}

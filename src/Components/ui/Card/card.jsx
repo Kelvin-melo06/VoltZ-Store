@@ -1,17 +1,28 @@
 import Button from "../Button/Button";
 
 
-const Card = ({ children, className, buttonText, onButtonClick, ...props }) => {
+const Card = ({
+  children,
+  className,
+  buttonText,
+  onButtonClick,
+  buttonClasseName,
+}) => {
   return (
     <>
       <div
         className={`card
         ${className || ""}`}
-        {...props}
       >
         {children}
 
-        {buttonText && <Button text={buttonText} onClick={onButtonClick} />}
+        {buttonText && (
+          <Button
+            className={buttonClasseName}
+            text={buttonText}
+            onClick={onButtonClick}
+          />
+        )}
       </div>
     </>
   );
