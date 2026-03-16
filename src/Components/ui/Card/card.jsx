@@ -1,5 +1,4 @@
-import Button from "../Button/Button";
-
+import Button from "../button/Button";
 
 const Card = ({
   children,
