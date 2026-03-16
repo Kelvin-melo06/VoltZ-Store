@@ -1,0 +1,20 @@
+.faq-item {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: flutuante 3s ease-in-out infinite;
+}
+
+
+.faq-item h3{
+    color: white;
+    font-size: 20px;
+}
+
+.faq-item:hover{
+    border-color: #00BFFF;
+    box-shadow: 0 8px 25px rgba(0,191,255,0.3);
+}
