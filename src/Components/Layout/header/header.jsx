@@ -1,7 +1,6 @@
 import { Icon } from "../../ui/icon/Icon.jsx";
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import Nav from "../nav/nav.jsx";
-import CartModal from "../../ui/modal/CartModal.jsx";
 import { CartContext } from "../../../context/CartContext.jsx";
 import { ModalContext } from "../../../context/ModalContext.jsx";
 import { useContext, useState, useEffect } from "react";
