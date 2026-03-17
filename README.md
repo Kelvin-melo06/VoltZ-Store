@@ -15,7 +15,7 @@ Projeto focado em <b>componentização</b>, <b>responsividade</b> e <b>UI futuri
 
 ## 🚀 Deploy
 
-🔗 https://voltz-store.vercel.app
+🔗 volt-z-storee.vercel.app
 
 ---
 
