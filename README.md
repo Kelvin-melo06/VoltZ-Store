@@ -32,8 +32,10 @@ Projeto focado em <b>componentização</b>, <b>responsividade</b> e <b>UI futuri
 <img src="https://readme-typing-svg.herokuapp.com?font=Bitcount+Grid+Single&size=28&pause=1000&color=0B79D9&width=435&lines=⚡Funcionalidades⚡" />
 </a>
 
+<div align="center">
+
 | Sistema | Descrição |
-|------|------|
+|:------:|:---------:|
 | 🛒 Carrinho de Compras | Gerenciamento de produtos com **Context API** |
 | 📱 Menu Responsivo | Menu hambúrguer com animação |
 | 🧾 Modal do Carrinho | Interface dinâmica exibindo itens adicionados |
@@ -41,7 +43,9 @@ Projeto focado em <b>componentização</b>, <b>responsividade</b> e <b>UI futuri
 | 🎨 UI Futurista | Design dark mode com gradientes e efeitos |
 | ⚡ Animações | Elementos com animação **fade-up** |
 
----
+</div>
+
+
 
 ## <a href="https://git.io/typing-svg">
 <img src="https://readme-typing-svg.herokuapp.com?font=Bitcount+Grid+Single&size=28&pause=1000&color=0B79D9&width=435&lines=⚡Tecnologias⚡" />
