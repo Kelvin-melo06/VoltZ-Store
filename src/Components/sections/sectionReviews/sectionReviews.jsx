@@ -1,8 +1,23 @@
 import "./sectionReviews.css";
 import Card from "../../ui/Card/card";
 import SectionTitle from "../../ui/SectionTitle";
+import { data } from "autoprefixer";
 
 const SectionReviews = () => {
+  const reviews = [
+    {
+      id: 1,
+      img: "💬",
+      p: " Adorei o suporte premium, muito prático e resistente. ",
+      pessoa: "- Ana, Gamer",
+    },
+    {
+      id: 2,
+      img: "💬",
+      p: "O Headset Pro X mudou totalmente minha experiência de jogo!”",
+      pessoa: "- Laura, Gamer",
+    },
+  ];
   return (
     <section
       id="reviews"
@@ -13,45 +28,16 @@ const SectionReviews = () => {
     fade-up
     "
     >
-      <SectionTitle>
-        O que Dizem nossos clientes:
-      </SectionTitle>
-      <div
-        className="
-      grid
-      gap-10
-      mt-12
-      [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]
-      "
-      >
-        <Card
-          className="
-        reviews-card
-        fade-up
-        "
-        >
-          <p>
-            <span className="absolute -top-0 -left-2 text-[#00BFFF] text-lg">
-              💬
-            </span>
-            "Adorei o suporte premium, muito prático e resistente."
-          </p>
-          <span>- Ana, Gamer</span>
-        </Card>
-        <Card
-          className="
-        reviews-card 
-        fade-up
-        "
-        >
-          <p className="relative pl-5 italic">
-            <span className="absolute -top-1 -left-2 text-[#00BFFF] text-lg">
-              💬
-            </span>
-            "Adorei o suporte premium, muito prático e resistente."
-          </p>
-          <span>- Carlos, Gamer</span>
-        </Card>
+      <SectionTitle>O que Dizem nossos clientes:</SectionTitle>
+
+      <div className="grid gap-10 mt-12 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
+        {reviews.map((rev) => (
+          <Card key={rev.pessoa} className="reviews-card fade-up w-full md:max-w-[600px] mx-auto">
+            <p>
+              <span>{rev.img}</span> {rev.p} {rev.pessoa}
+            </p>
+          </Card>
+        ))}
       </div>
     </section>
   );
