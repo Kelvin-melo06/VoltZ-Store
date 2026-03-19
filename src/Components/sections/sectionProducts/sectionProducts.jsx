@@ -1,3 +1,15 @@
+/**
+ * SectionProducts.jsx
+ * ----------------------------------------
+ * Componente responsável por exibir os produtos em destaque da loja.
+ *
+ * Ele realiza:
+ * - Busca de dados (simulando uma API)
+ * - Filtragem de produtos
+ * - Integração com o carrinho (Context API)
+ * - Renderização dinâmica dos produtos
+ */
+
 import "./sectionProducts.css";
 import Card from "@/Components/ui/Card/card.jsx";
 import { getProducts } from "@/services/products.js";
@@ -7,15 +19,47 @@ import SectionTitle from "@/Components/ui/SectionTitle.jsx";
 
 const SectionProducts = () => {
 
+  /**
+   * products (state):
+   * -----------------
+   * Armazena a lista de produtos que será exibida na tela.
+   *
+   * Inicialmente começa vazio e é preenchido após a busca dos dados.
+   */
   const [products, setProducts] = useState([]);
+
+  /**
+   * Context API:
+   * ------------
+   * Acessa a função global de adicionar itens ao carrinho.
+   */
   const { addToCart } = useContext(CartContext);
 
+  /**
+   * useEffect - Carregamento dos produtos:
+   * --------------------------------------
+   * Executado quando o componente é montado.
+   *
+   * Responsável por:
+   * - Buscar os produtos (simulando uma API)
+   * - Filtrar apenas os produtos desejados (featured === true)
+   * - Atualizar o estado com os produtos filtrados
+   */
   useEffect(() => {
     async function loadProducts() {
+
+      // Busca os dados da "API"
       const data = await getProducts();
 
+      /**
+       * Filtragem:
+       * ----------
+       * Mantém apenas os produtos marcados como "featured"
+       * (excluindo produtos de oferta, por exemplo).
+       */
       const productsOfHere = data.filter(prod => prod.featured);
 
+      // Atualiza o estado com os produtos filtrados
       setProducts(productsOfHere);
     }
 
@@ -34,6 +78,11 @@ const SectionProducts = () => {
       "
     >
 
+      {/**
+       * SectionTitle:
+       * -------------
+       * Componente reutilizável para títulos das seções.
+       */}
       <SectionTitle>
         Produtos em destaque
       </SectionTitle>
@@ -48,12 +97,18 @@ const SectionProducts = () => {
         "
       >
 
+        {/**
+         * Renderização dinâmica:
+         * ----------------------
+         * Percorre a lista de produtos e renderiza um Card para cada item.
+         */}
+          
         {products.map((product) => (
 
           <Card
             key={product.id}
 
-            buttonText="Comprar"
+            buttonText="Comprar" // texto do botão
 
             buttonClasseName="
             w-full
@@ -71,7 +126,8 @@ const SectionProducts = () => {
             hover:scale-[1.02]
             "
 
-            onButtonClick={() => addToCart(product)}
+            
+            onButtonClick={() => addToCart(product)} // add no carrinho
 
             className="
             w-full
@@ -94,6 +150,9 @@ const SectionProducts = () => {
             "
           >
 
+            {/**
+             * Imagem do produto (visual):
+             */}
             <div
               className="
               w-full
@@ -116,6 +175,9 @@ const SectionProducts = () => {
               {product.img}
             </div>
 
+            {/**
+             * Nome do produto:
+             */}
             <div
               className="
               text-[1.4rem]
@@ -127,6 +189,11 @@ const SectionProducts = () => {
               {product.name}
             </div>
 
+            {/**
+             * Preço do produto:
+             * -----------------
+             * Utiliza toFixed(2) para limitar em duas casas decimais.
+             */}
             <div
               className="
               text-[1.8rem]
