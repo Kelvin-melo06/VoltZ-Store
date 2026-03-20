@@ -30,7 +30,7 @@ const CartModal = () => {
    * - isModalOpen -> controla se o modal está aberto
    */
   const { cart, removeFromCart } = useContext(CartContext);
-  const { closeModal, isModalOpen } = useContext(ModalContext);
+  const { toggleModal, isModalOpen } = useContext(ModalContext);
 
   /**
    * useEffect - Tecla ESC:
@@ -42,7 +42,7 @@ const CartModal = () => {
    */
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") toggleModal();
     };
 
     window.addEventListener("keydown", handleEsc);
@@ -52,7 +52,7 @@ const CartModal = () => {
      * Remove o listener ao desmontar o componente
      */
     return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+  }, [isModalOpen,toggleModal]);
 
   /**
    * Renderização condicional:
@@ -81,7 +81,7 @@ const CartModal = () => {
        *
        * Ao clicar nela, o modal é fechado.
        */
-      onClick={closeModal}
+      onClick={toggleModal}
       className="modal-overlay"
       role="dialog"
       aria-modal="true"
@@ -195,7 +195,7 @@ const CartModal = () => {
         */}
         <Button
           text="Fechar"
-          onClick={closeModal}
+          onClick={toggleModal}
           className="btn-primary"
         />
       </div>
